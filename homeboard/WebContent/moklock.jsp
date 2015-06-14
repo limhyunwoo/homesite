@@ -7,6 +7,8 @@
 <title>게시판</title>
 </head>
  <body>
+
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
@@ -32,5 +34,6 @@
    <td><input type=button value="글쓰기"></td>
   </tr>
 </table>
+
 </body> 
 </html>

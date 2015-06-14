@@ -16,7 +16,8 @@
 
  <body>
  <div>
- <form action="menu.jsp" method="get">
+ 
+ <form action="<%=request.getContextPath()%>/name/hello.nhn" method="get">
 <table>
   <tr>
    <td>

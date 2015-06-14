@@ -24,6 +24,8 @@
 
 <body>
 <div>
+
+ 
 <%-- name  =  	<br />
 password  = <%= request.getParameter("password") %> 	<br />
 title  = <%= request.getParameter("title") %> 	<br />
@@ -43,18 +45,20 @@ category =  	<p></p> --%>
 		
 	</div> -->
 	<hr />
+	
 	<div style="width : 100% border : 1px solid black">
+	
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
- <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
-   <td ><img src="img/table_left.gif"  align="left"/></td>
+ <tr style="background:url('<%=request.getContextPath()%>/img/table_mid.gif') repeat-x; text-align:center;">
+   <td ><img src="<%=request.getContextPath()%>/img/table_left.gif"  align="left"/></td>
    <td >번호</td>
    <td >카테고리</td>
    <td >제목</td>
    <td >ID</td>
    <td >작성일</td>
    <td >조회수</td>
-   <td><img src="img/table_right.gif" align="right" /></td>
+   <td><img src="<%=request.getContextPath()%>/img/table_right.gif" align="right" /></td>
   </tr>
 <tr height="15" align="center">
 </tr>
@@ -68,9 +72,13 @@ category =  	<p></p> --%>
  	<td height="20"></td>
  	<td  >1</td>
    <td ><%= request.getParameter("category") %></td>
-   <td><a href="article.jsp"><%= request.getParameter("title") %></a></td>
+   <td >
+ 
+ <a href="<%=request.getContextPath()%>/article.jsp"><%= request.getParameter("title") %></a>
+   
+   </td>
    <td ><%= request.getParameter("name") %></td>
-   <td ><%= gh.format(now) %></td>
+   <td ><% String time = gh.format(now); %>  <%= time %></td>
    <td >623</td>
  </tr>
  <tr height="1" bgcolor="#82B5DF" width=90% align="center"><td colspan="8" ></td></tr>
@@ -78,16 +86,17 @@ category =  	<p></p> --%>
  
 
  </table>
+
  <!-- 20 70 90 33 84 58-->
  
 
  
- 
+<!--  <form action="article.jsp" method="get"> -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="center">
    <td>
-   <form action="">
+
 	
 			
 	
@@ -102,21 +111,24 @@ category =  	<p></p> --%>
 			
 			 <input type=button value="검색">
 			
-		 <input type=button value="글쓰기" align="right"></td>
+		 <input type=button value="글쓰기" align="right">
+	 </td>
 			
-	</form>
+
    
    
    
   
   </tr>
+ 
 </table>
-	
+<!-- </form> -->
 	
 	
 	</div>
 </div>
 
+ 
 	
 </body>
 </html>

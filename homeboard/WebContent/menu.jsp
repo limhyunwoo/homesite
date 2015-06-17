@@ -1,3 +1,4 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%@ page import="java.util.Enumeration" %>
@@ -17,7 +18,7 @@
     	<meta charset="UTF-8" />
     	<title>게시판메뉴</title>
     	<style>
-	@IMPORT url("menu.css");
+	@IMPORT url("<%=request.getContextPath()%>/menu.css");
 	
 	</style>
     </head>
@@ -46,9 +47,9 @@ category =  	<p></p> --%>
 	</div> -->
 	<hr />
 	
-	<div style="width : 100% border : 1px solid black">
+	<div style="width : 100%  border : 1px solid black">
 	
-	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<table width="50%" cellpadding="0" cellspacing="0" border="0" align = "center">
   <tr height="5"><td width="5"></td></tr>
  <tr style="background:url('<%=request.getContextPath()%>/img/table_mid.gif') repeat-x; text-align:center;">
    <td ><img src="<%=request.getContextPath()%>/img/table_left.gif"  align="left"/></td>
@@ -63,7 +64,7 @@ category =  	<p></p> --%>
 <tr height="15" align="center">
 </tr>
 
-
+<% if(request.getAttribute("title")!=null){%>
   <tr height="1" bgcolor="#82B5DF"  width = 90% align="center"><td colspan="8"></td></tr>
 
 
@@ -74,7 +75,7 @@ category =  	<p></p> --%>
    <td ><%= request.getParameter("category") %></td>
    <td >
  
- <a href="<%=request.getContextPath()%>/article.jsp"><%= request.getParameter("title") %></a>
+ <a href="<%=request.getContextPath()%>/board/notice.do"><%= request.getParameter("title") %></a>
    
    </td>
    <td ><%= request.getParameter("name") %></td>
@@ -82,7 +83,7 @@ category =  	<p></p> --%>
    <td >623</td>
  </tr>
  <tr height="1" bgcolor="#82B5DF" width=90% align="center"><td colspan="8" ></td></tr>
- 
+<% } %>
  
 
  </table>
@@ -111,7 +112,7 @@ category =  	<p></p> --%>
 			
 			 <input type=button value="검색">
 			
-		 <input type=button value="글쓰기" align="right">
+		 <input type=button value="글쓰기" align="right" onClick="location.href='<%=request.getContextPath()%>/boardWrite.jsp';">
 	 </td>
 			
 
